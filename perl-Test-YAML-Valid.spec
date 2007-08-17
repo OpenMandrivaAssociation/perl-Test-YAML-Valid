@@ -1,7 +1,7 @@
 %define module  Test-YAML-Valid
 %define name    perl-%{module}
 %define version 0.03
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:           %{name}
 Version:        %{version}
@@ -16,6 +16,7 @@ BuildRequires:  perl-devel
 %endif
 BuildRequires:  perl(YAML)
 BuildRequires:  perl(YAML::Syck)
+Requires:       perl(YAML)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
