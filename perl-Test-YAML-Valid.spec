@@ -18,7 +18,6 @@ BuildRequires:  perl(YAML)
 BuildRequires:  perl(YAML::Syck)
 Requires:       perl(YAML)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This module lets you easily test the validity of YAML.
