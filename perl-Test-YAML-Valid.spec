@@ -1,16 +1,16 @@
-%define module  Test-YAML-Valid
-%define name    perl-%{module}
-%define version 0.03
-%define release %mkrel 4
+%define upstream_name    Test-YAML-Valid
+%define upstream_version 0.03
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Test for valid YAML
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.tar.gz
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Test for valid YAML
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
@@ -18,13 +18,13 @@ BuildRequires:  perl(YAML)
 BuildRequires:  perl(YAML::Syck)
 Requires:       perl(YAML)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module lets you easily test the validity of YAML.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor </dev/null
@@ -45,4 +45,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/Test
 %{_mandir}/*/*
-
