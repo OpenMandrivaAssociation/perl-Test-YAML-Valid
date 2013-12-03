@@ -15,6 +15,7 @@ BuildRequires:	perl-devel
 BuildRequires:	perl(YAML)
 BuildRequires:	perl(YAML::Syck)
 BuildRequires:	perl(YAML::XS)
+BuildRequires:	perl(YAML::Tiny)
 Requires:		perl(YAML)
 BuildArch:	noarch
 
