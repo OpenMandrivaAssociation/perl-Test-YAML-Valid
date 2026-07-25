@@ -2,14 +2,14 @@
 %define upstream_version 0.04
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	Test for valid YAML
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/Test-YAML-Valid
+Source0:	https://cpan.metacpan.org/authors/id/J/JR/JROCKWAY/Test-YAML-Valid-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
