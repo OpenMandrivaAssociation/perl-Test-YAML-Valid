@@ -1,15 +1,13 @@
 %define upstream_name    Test-YAML-Valid
-%define upstream_version 0.04
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.04
+Release:	6
 
 Summary:	Test for valid YAML
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Test-YAML-Valid
-Source0:	https://cpan.metacpan.org/authors/id/J/JR/JROCKWAY/Test-YAML-Valid-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/J/JR/JROCKWAY/Test-YAML-Valid-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ BuildArch:	noarch
 This module lets you easily test the validity of YAML.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor </dev/null
@@ -48,9 +46,7 @@ make test
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.30.0-1mdv2010.0
 + Revision: 405604
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.03-4mdv2009.0
+- rebuild using %0.04 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.03-4mdv2009.0
 + Revision: 241986
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
